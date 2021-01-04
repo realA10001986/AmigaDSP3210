@@ -1,0 +1,139 @@
+		PARTNO		31XXXX ;
+		NAME            U122 ;
+		DATE            May 28, 1992 ;
+		REV             10 ;
+		DESIGNER        Dave Haynie ;
+		COMPANY         Commodore ;
+		ASSEMBLY        AA3000 ;
+		LOCATION        U122 ;
+		DEVICE		p22v10 ;
+
+/************************************************************************/
+/*									*/
+/*  AA3000	DSP3210 Bus Interface Logic  				*/
+/*									*/
+/************************************************************************/
+/*  Allowable Target Device Types: 22V10-10 				*/
+/************************************************************************/
+/*  Clock:		!dspCLK						*/
+/************************************************************************/
+/*  Free Pins:		NONE						*/
+/************************************************************************/
+/*  HISTORY								*/
+/*	DBH Jan 28:	Completely new.					*/
+/*	DBH Nov 20:	Bigtime revisions for Rev2 PCB.			*/
+/*	DBH Feb  4:	It's "dspSRDY", not "SRDY"...			*/
+/* 	DBH Feb  6:	CPUCLK now available, BURST == CBREQ		*/
+/*	DBH Feb 10:	New clocking scheme, bigtime changes.		*/
+/*	DBH Feb 10:	Improved bus mastership SNOOP function.		*/
+/*	DBH Mar 23:	Changes to 68030 cycle timing.			*/
+/*	DBH Mar 27:	Yet again even more 030 timing changes, en plus */
+/*			break off pin 19!				*/
+/*	DBH Apr  9:	Fixed bus write sizing bug.			*/
+/*	DBH May 28:	Simplified by removing unused functions.	*/
+/************************************************************************/
+
+/** Inputs **/
+
+PIN 1		= !dspCLK	;	/* Inverted DSP clock */
+PIN 3		= !dspAS	;	/* DSP Address Strobe */
+PIN 4		=  RW		;	/* 030 R/W Strobe */
+PIN 5		= !DSACK0	;	/* 030 Asynchronous termination */
+PIN 6		= !DSACK1	;
+PIN 7		= !STERM	;	/* 030 Synchronous termination */
+PIN 10		= !dspBGACK	;	/* The DSP has mastered the bus */
+PIN 11		=  dspMS3	;	/* DSP memory strobes */
+PIN 13		=  dspMS2	;
+PIN 18		=  CPUCLK	;	/* 68030 bus clock */
+
+/**  Outputs  **/
+
+PIN 14		= !SNOOP	;	/* Watch out for bus activity */
+PIN 15		= !FC1		;	/* 68030 function code */
+PIN 16		=  SIZ1		;	/* 68030 sizing lines */
+PIN 17		=  SIZ0		;
+PIN 19		= !TERM		;	/* Termination? */
+PIN 20		= !DSSYNC	;	/* Data cycle synchronizer */
+PIN 21		= !dspSRDY	;	/* DSP cycle termination */
+PIN 22		= !DS		;	/* 68030 compatible data stobe */
+PIN 23		= !AS		;	/* 68030 address strobe */
+
+/**  Declarations and Intermediate Variable Definitions  **/
+
+/* Qualified basic DSP address strobe. */
+
+okAS		= dspBGACK & dspAS;
+
+/* The asynchronous cycle terminator (we're only 32-bits here). */
+
+ATERM		= DSACK0 & DSACK1;
+
+/**  Logic Equations  **/
+
+/* The snooper function is designed to aid the DSP bus arbiter PAL, by
+   watching the bus for activity during DMA acquisition.  */
+
+SNOOP		= !RW
+		#  FC1
+		#  STERM
+		#  TERM
+		#  dspSRDY
+		#  DSACK0
+		#  DSACK1;
+
+/* The DSP doesn't have a function space equivalent available externally; this 
+   will set the system function code to Supervisor Data Space.  This is also
+   used as kind of a cycle start for the 68030 emulation logic.  I send out
+   FC1 when a dspAS* is detected in the 68030 S0 state. */
+
+FC1		= okAS & CPUCLK & !dspCLK
+		#  FC1 & okAS
+		#  FC1 &   AS;
+
+FC1.OE		= dspBGACK;
+
+/* This synchronizes the asynch cycle termination signals. */
+
+DSSYNC.D	=  okAS & AS & DS & ATERM & !CPUCLK
+		#  okAS & DSSYNC;
+DSSYNC.AR	= !dspAS;
+
+/* Here we calculate the termination condition.  STERM and DSSYNC at this
+   point both have synchronous timing. */
+
+TERM 		= okAS & DSSYNC & !dspCLK & DS & CPUCLK
+		# okAS &  STERM & !dspCLK & DS & CPUCLK
+		# okAS &   TERM & !dspSRDY;
+
+/* The DSP gets a synchronous termination signal from the 68030 system
+   one way or another.  If the DSACKs do it, it's pre-synched in via 
+   DSSYNC, otherwise, it comes in via STERM.  We need to make sure of the
+   CPUCLK phase before passing it out to the DSP. */
+
+dspSRDY		= okAS &  CPUCLK & AS & TERM & dspCLK
+		# okAS & dspSRDY;
+
+/* Here we make an AS and DS from the DSP AS.  The start of S1 is given by
+   CPUCLK going low with dspAS and FC1 both asserted.  AS can use this
+   directly, DS during writes needs to wait a clock before going low. */
+
+AS.D		= okAS & FC1 &  !dspSRDY & !CPUCLK & !ATERM
+		# okAS &  AS & !(dspSRDY & !CPUCLK);
+AS.OE		= dspBGACK;
+AS.AR		= !dspAS;
+
+DS.D		= okAS & FC1 & !dspSRDY & !CPUCLK &  RW & !ATERM
+		# okAS &  AS & !CPUCLK & !RW
+		# okAS &  DS & !(dspSRDY & !CPUCLK);
+DS.OE		= dspBGACK;
+DS.AR		= !dspAS;
+
+/* SIZE is just a pass-through.  Why put 'em here?  For burst support on the
+   '030 bus, we would need to control them, since the 3210 burst looks more
+   like the '040 burst. */
+
+SIZ1		= dspMS3;
+SIZ1.OE		= dspBGACK;
+
+SIZ0		= dspMS2;
+SIZ0.OE		= dspBGACK;
