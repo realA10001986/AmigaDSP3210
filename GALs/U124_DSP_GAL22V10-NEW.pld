@@ -6,7 +6,7 @@
 		COMPANY         Commodore ;
 		ASSEMBLY        AA3000 ;
 		LOCATION        U124 ;
-		DEVICE		p22v10 ;
+		DEVICE		g22v10 ;
 
 /************************************************************************/
 /*									*/
