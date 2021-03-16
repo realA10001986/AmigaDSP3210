@@ -12,6 +12,7 @@ The recommended combination is ATF22V10C-5JX for U122, U123, U124 and for U701
 - or ATF16V8BQL-15JU with the non-"NEW" PLD (works with 68030 and many accelerators; notable not CSMK2 and WarpEngine).
 
 Here is a list of combinations tested with results:
+
 https://docs.google.com/spreadsheets/d/1c7zMVO1gBBRQ6kRbHjpwxwJw0_Bv94AN07wenYpk3eQ/edit?usp=sharing
 
 For more information and documents on the DSP in question, see Wrangler's repo at https://github.com/Wrangler491/AA3000-DSP
