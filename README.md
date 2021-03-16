@@ -9,7 +9,7 @@ Numerous tests showed that GAL speed and type are important. The test group sett
 
 The recommended combination is ATF22V10C-5JX for U122, U123, U124 and for U701 
 - either ATF16V8-7JU with the "NEW" PLD (works with 68030 and many accelerators; notably not CSMK3 and CSPPC), 
-- or ATF16V8BQL-15JU with the non-"NEW" PLD (works with 68030 and many accelerators; notable not CSMK2 and WarpEngine).
+- or ATF16V8BQL-15JU with the non-"NEW" PLD (works with 68030 and many accelerators; notably not CSMK2 and WarpEngine).
 
 Here is a list of combinations tested with results:
 
