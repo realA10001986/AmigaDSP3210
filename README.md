@@ -15,6 +15,6 @@ Here is a list of combinations tested with results:
 
 https://docs.google.com/spreadsheets/d/1c7zMVO1gBBRQ6kRbHjpwxwJw0_Bv94AN07wenYpk3eQ/edit?usp=sharing
 
-Please note: The AA3000+ boards from Hese turned out to have one DSP related tracing bug. The signals "RW" and "R_W", despite their different name, are in fact one and the same. Hese treated those a two separate signals. They need to be connected for the DSP to work. The easiest way for already assembled boards is to run a wire from U122 pin 5 to U124 pin 27. See https://github.com/realA10001986/Amiga/blob/main/RW-R_W.jpg - the pink spots mark the pins to be connected to each other.
+Please note: The AA3000+ boards from Hese turned out to have one DSP related tracing bug. The signals "RW" and "R_W", despite their different name, are in fact one and the same. Hese treated those as two separate signals. They need to be connected for the DSP to work. The easiest way for already assembled boards is to run a wire from U122 pin 5 to U124 pin 27. See https://github.com/realA10001986/Amiga/blob/main/RW-R_W.jpg - the pink spots mark the pins to be connected to each other.
 
 For more information and documents on the DSP in question, see Wrangler's repo at https://github.com/Wrangler491/AA3000-DSP
