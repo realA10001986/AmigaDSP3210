@@ -5,7 +5,9 @@ dsp3210dist: A package for getting the DSP 3210 on AA3000+ boards going. Contain
 
 GALs: The pld and jed files for U122, U123, U124 and U701 for the AA3000+. Some bugs of the originals in the Haynie archives have been fixed. 
 
-Numerous tests showed that GAL speed is important. The recommended combination is ATF22V10C-5JX for U122, U123, U124 and for U701 
+Numerous tests showed that GAL speed and type are important. The test group settled for ATFs because they are available as new parts.
+
+The recommended combination is ATF22V10C-5JX for U122, U123, U124 and for U701 
 - either ATF16V8-7JU with the "NEW" PLD (works with 68030 and many accelerators; notably not CSMK3 and CSPPC), 
 - or ATF16V8BQL-15JU with the non-"NEW" PLD (works with 68030 and many accelerators; notable not CSMK2 and WarpEngine).
 
