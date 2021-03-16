@@ -1,5 +1,5 @@
 # Amiga
-A collection of Amiga stuff
+A small collection of Amiga stuff, especially for the AA3000+
 
 dsp3210dist: A package for getting the DSP 3210 on AA3000+ boards going. Contains drivers, example code, Changelog and README to get you started.
 
