@@ -9,4 +9,7 @@ Numerous tests showed that GAL speed is important. The recommended combination i
 - either ATF16V8-7JU with the "NEW" PLD (works with 68030 and many accelerators; notably not CSMK3 and CSPPC), 
 - or ATF16V8BQL-15JU with the non-"NEW" PLD (works with 68030 and many accelerators; notable not CSMK2 and WarpEngine).
 
+Here is a list of combinations tested with results:
+https://docs.google.com/spreadsheets/d/1c7zMVO1gBBRQ6kRbHjpwxwJw0_Bv94AN07wenYpk3eQ/edit?usp=sharing
+
 For more information and documents on the DSP in question, see Wrangler's repo at https://github.com/Wrangler491/AA3000-DSP
