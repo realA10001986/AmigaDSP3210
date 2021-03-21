@@ -1,9 +1,13 @@
 # Amiga
 A small collection of Amiga stuff, especially for the AA3000+
 
-dsp3210dist: A package for getting the DSP 3210 on AA3000+ boards going. Contains drivers, example code, Changelog and README to get you started.
+dsp3210dist: 
+============
+A package for getting the DSP 3210 on AA3000+ boards going. Contains drivers, example code, Changelog and README to get you started.
 
-GALs: The pld and jed files for U122, U123, U124 and U701 for the AA3000+. Some bugs of the originals in the Haynie archives have been fixed. 
+GALs: 
+=====
+The pld and jed files for U122, U123, U124 and U701 for the AA3000+. Some bugs of the originals in the Haynie archives have been fixed. 
 
 Numerous tests showed that GAL speed and type are important. The test group settled for ATFs because they are available as new parts.
 
