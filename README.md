@@ -12,8 +12,8 @@ The pld and jed files for U122, U123, U124 and U701 for the AA3000+. Some bugs o
 Numerous tests showed that GAL speed and type are important. The test group settled for ATFs because they are available as new parts.
 
 The recommended combination is **ATF22V10C-5JX** for U122, U123, U124, and for U701 
-- either **ATF16V8-7JU** with the **"U701_DSP_GAL16V8-NEW" PLD** (works with 68030 and several accelerators; notably *not CSMK3 and CSPPC)*, 
-- or **ATF16V8BQL-15JU** (or any other ATF-15ns type) with the **"U701_DSP_GAL16V8" PLD** (works with 68030 and several accelerators; notably *not CSMK2 and WarpEngine*).
+- either **ATF16V8-7JU** with the **"U701_DSP_GAL16V8-NEW"** logic (works with 68030 and several accelerators; notably *not CSMK3 and CSPPC)*, 
+- or **ATF16V8BQL-15JU** (or any other ATF-15ns type) with the **"U701_DSP_GAL16V8"** logic (works with 68030 and several accelerators; notably *not CSMK2 and WarpEngine*).
 
 Be aware that these timing recommendations are only valid for ATFs, not GALs. Here is a list of combinations tested with results:
 
