@@ -9,7 +9,7 @@ A package for getting the DSP 3210 on AA3000+ boards going. Contains drivers, ex
 
 The pld and jed files for U122, U123, U124 and U701 for the AA3000+. Some bugs of the originals in the Haynie archives have been fixed. 
 
-Numerous tests showed that GAL speed and type are important. The test group settled entirely for ATFs because they are available as new parts.
+Numerous tests showed that GAL speed and type are essential. The test group settled entirely for ATFs because they are available as new parts.
 
 The recommended combination is **ATF22V10C-5JX** for U122, U123, U124; and for U701: 
 - either **ATF16V8-7JU** with the **"U701_DSP_GAL16V8-NEW"** logic (works with 68030 and several accelerators; notably *not CSMK3 and CSPPC)*, 
