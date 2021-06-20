@@ -7,7 +7,7 @@ A package for getting the DSP 3210 on AA3000+ boards going. Contains drivers, ex
 
 ### GALs: 
 
-The pld and jed files for U122, U123, U124 and U701 for the AA3000+. Some bugs of the originals in the Haynie archives have been fixed. 
+The pld and jed files for U122, U123, U124 and U701 for the AA3000+. Some bugs of the originals in the Haynie archives have been fixed. Update 2021-06-20: U124 fixed to make bits actually stick. 
 
 Numerous tests showed that GAL speed and type are essential. The test group settled entirely for ATFs because they are available as new parts.
 
