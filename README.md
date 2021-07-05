@@ -1,5 +1,5 @@
 # Amiga
-A small collection of stuff for the AA3000+ and its DSP 3210
+A collection of stuff for the AA3000+ and its DSP 3210
 
 ### dsp3210dist: 
 
