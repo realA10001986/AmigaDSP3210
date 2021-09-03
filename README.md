@@ -1,5 +1,4 @@
-# Amiga
-A collection of stuff for the Amiga and its DSP 3210
+# Amiga and DSP 3210
 
 ### dsp3210dist: 
 
