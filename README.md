@@ -2,7 +2,7 @@
 
 ### dsp3210dist: 
 
-A package for getting the DSP 3210 on the AA3000+ going. Contains drivers, docs, GAL logic and example code to get you started. (A driver extension for ATL DSP Zorro boards is also included, albeit entirely untested and possibly incomplete.) For info on the DSP, also see "doc" folder here.
+A package for getting the DSP 3210 on the AA3000+ going. Contains drivers, docs, GAL logic and example code to get you started. (A driver extension for ATL DSP Zorro boards is also included, albeit entirely untested and possibly incomplete.) For **comprehensive info** on the DSP, also see "Doc" folder here.
 
 ### GALs: 
 
