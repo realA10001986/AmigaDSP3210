@@ -8,7 +8,15 @@ For **comprehensive info** on the DSP, also see "Doc" folder here.
 
 ### GALs: 
 
-The pld and jed files for U122, U123, U124 and U701 for the AA3000+. Some bugs of the originals in the Haynie archives have been fixed. Update 2021-06-20: U124 fixed to make bits actually stick. 
+The PLD and JEDEC files for U122, U123, U124 and U701 for the AA3000+. 
+
+The PLD files contain the logic required to operate the DSP3210 and are updated versions of the originals found in the Haynie Archives. Several bugs were identified and fixed.
+
+The JEDECs in this directory were created using WinCUPL 5.30.4.
+
+If you are using a TL866II to program the ATFs, the 22v10s need to be burned in "UES" mode.
+
+Timing/speed rating:
 
 Numerous tests showed that GAL speed and type are essential. The test group settled entirely for ATFs because they are available as new parts.
 
@@ -18,7 +26,7 @@ Unfortunately, there is no known "one fits all" combination of speed ratings. Th
 
 Be aware that these timing recommendations are only valid for ATFs, not GALs. ATFs and GALs are not fully compatible timingwise.
 
-If you are using a TL866II to program the ATFs, the 22v10s need to be burned in "UES" mode.
+In order to test your set of ATFs on your machine, run the dsp3210devtest program provided in this archive. If this shows 0 errors after at least 5000 passes, your machine is very likely good to go. Note: If dsp3210devtest fails during the int6 test, but the int2 test is passed, your U124 is not up to date. Read and write errors are more likely due to timing issues with U122, U123 and/or U701. If your machine is running on the 68030, try the other alternative for U701 first (7+R8 vs 15+R9).
 
 Here is a list of combinations of ATFs tested with results:
 
