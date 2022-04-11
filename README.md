@@ -1,5 +1,7 @@
 # Amiga and DSP 3210
 
+This repo is about the Amiga and the DSP 3210. So what's what:
+
 ### dsp3210dist: 
 
 A package for getting the DSP 3210 on the AA3000+ going. Contains drivers, docs, GAL logic and example code to get you started. (A driver extension for ATL DSP Zorro boards is also included, albeit entirely untested and possibly incomplete.) 
@@ -36,7 +38,7 @@ Please note: Hese's AA3000+ boards from before 2021 turned out to have one DSP r
 
 ### Developing for the DSP3210:
 
-AT&T's native development tools ("d32 tools", ie assembler, compiler, etc) are not included here for copyright reasons. You might find them elsewhere on the internet. They came in DOS and Amiga native versions, the latter a bit less far developed. Beware that using the DOS tools might give you little-endian DSP executables, see the documentation of dsp3210.library in the dsp3210dist package.
+AT&T's native development tools ("d32 tools", ie assembler, compiler, etc) are **not** included here for copyright reasons. You might find them elsewhere on the internet. They came in DOS and Amiga native versions, the latter a bit less far developed. Beware that using the DOS tools might give you little-endian DSP executables, see the documentation of dsp3210.library in the **dsp3210dist** package.
 
 There is some effort in the Amiga community to write their own assembler/compiler, but I am not involved in this at all. Note that the dsp3210.library provided here only works with DSP executables created by the original d32 tools.
 
