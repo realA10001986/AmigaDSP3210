@@ -4,7 +4,7 @@
 
 A package for getting the DSP 3210 on the AA3000+ going. Contains drivers, docs, GAL logic and example code to get you started. (A driver extension for ATL DSP Zorro boards is also included, albeit entirely untested and possibly incomplete.) 
 
-For **comprehensive info** on the DSP, also see "Doc" folder here.
+For **comprehensive info** on the DSP itself, also see "Doc" folder here. 
 
 ### GALs: 
 
@@ -33,4 +33,11 @@ Here is a list of combinations of ATFs tested with results:
 https://docs.google.com/spreadsheets/d/1c7zMVO1gBBRQ6kRbHjpwxwJw0_Bv94AN07wenYpk3eQ/edit?usp=sharing
 
 Please note: Hese's AA3000+ boards from before 2021 turned out to have one DSP related tracing bug. The signals "**RW**" and "**R_W**", despite their different name, are in fact one and the same, while Hese treated them as two separate signals. In fact, they need to be connected for the DSP to work. The easiest way for already assembled boards is to run a wire from U122 pin 5 to U124 pin 27. See https://github.com/realA10001986/Amiga/blob/main/RW-R_W.jpg - the pink spots mark the pins to be connected to each other. This is accomplished easily by making a wire noose around the ATF's pin and soldering it to this pin at the very top of the package, so it's above the socket spring when the chip is in its socket.
+
+### Developing for the DSP3210:
+
+AT&T's native development tools ("d32 tools", ie assembler, compiler, etc) are not included here for copyright reasons. You might find them elsewhere on the internet. They came in DOS and Amiga native versions, the latter a bit less far developed. Beware that using the DOS tools might give you little-endian DSP executables, see the documentation of dsp3210.library in the dsp3210dist package.
+
+There is some effort in the Amiga community to write their own assembler/compiler, but I am not involved in this at all. Note that the dsp3210.library provided here only works with DSP executables created by the original d32 tools.
+
 
