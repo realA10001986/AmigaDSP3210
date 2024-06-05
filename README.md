@@ -28,7 +28,7 @@ Unfortunately, there is no known "one fits all" combination of speed ratings. Th
 
 Be aware that these timing recommendations are only valid for ATFs, not GALs. ATFs and GALs are not fully compatible timingwise.
 
-In order to test your set of ATFs on your machine, run the dsp3210devtest program provided in this archive. If this shows 0 errors after at least 5000 passes, your machine is very likely good to go. Note: If dsp3210devtest fails during the int6 test, but the int2 test is passed, your U124 is not up to date. Read and write errors are more likely due to timing issues with U122, U123 and/or U701. If your machine is running on the 68030, try the other alternative for U701 first (7+R8 vs 15+R9).
+In order to test your set of ATFs on your machine, run the _dsp3210devtest_ program provided in this archive. If this shows 0 errors after at least 5000 passes, your machine is very likely good to go. Note: If _dsp3210devtest_ fails during the int6 test, but the int2 test is passed, your U124 is not up to date. Read and write errors are more likely due to timing issues with U122, U123 and/or U701. If your machine is running on the 68030, try the other alternative for U701 first (7+R8 vs 15+R9).
 
 [Here](https://docs.google.com/spreadsheets/d/1c7zMVO1gBBRQ6kRbHjpwxwJw0_Bv94AN07wenYpk3eQ/edit?usp=sharing) is a list of combinations of ATFs tested with results.
 
