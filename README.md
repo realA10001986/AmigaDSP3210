@@ -1,6 +1,6 @@
 # Amiga and DSP 3210
 
-This repo is about the Amiga and the DSP 3210. So what's what:
+This repository is about the Amiga and the DSP 3210. So, what's what:
 
 ### dsp3210dist: 
 
