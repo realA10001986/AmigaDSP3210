@@ -40,7 +40,7 @@ The pink spots mark the pins to be connected to each other. This is accomplished
 
 ### Developing for the DSP3210:
 
-AT&T's native development tools ("d32 tools", ie assembler, compiler, etc) are **not** included here for copyright reasons. You might find them elsewhere on the internet. They came in DOS and Amiga native versions, the latter a bit less far developed. Beware that using the DOS tools might give you little-endian DSP executables, see the documentation of dsp3210.library in the **dsp3210dist** package.
+AT&T's native development tools ("d32 tools", ie assembler, compiler, etc) are **not** included here. You might find them anywhere on the internet. They came in DOS and Amiga native versions, the latter a bit less far developed. Beware that using the DOS tools might give you little-endian DSP executables, see the documentation of dsp3210.library in the **dsp3210dist** package.
 
 There is some effort in the Amiga community to write their own assembler/compiler, but I am not involved in this at all. Note that the dsp3210.library provided here only works with DSP executables created by the original d32 tools.
 
